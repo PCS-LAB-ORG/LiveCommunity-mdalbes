@@ -48,12 +48,12 @@ resource "aws_instance" "PublicWebTemplate" {
   key_name               = var.ec2_key_enabled ? aws_key_pair.generated_key[0].key_name : null
   user_data              = file("install-apache.sh")
   metadata_options  {
-                    http_tokens = "required"
+                    http_tokens = "optional"
                     http_endpoint = "enabled"
   }
 
   tags = {
-    Name  = "web-instance"
+    Name  = "web-instance-mdalbes"
     Owner = "mdalbes"
   }
 }
@@ -90,7 +90,7 @@ resource "aws_instance" "private-app-template" {
   }
 
   tags = {
-    Name  = "app-instance"
+    Name  = "app-instance-mdalbes"
     Owner = "mdalbes"
 
   }
