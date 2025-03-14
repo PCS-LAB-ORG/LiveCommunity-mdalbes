@@ -7,6 +7,7 @@ resource "aws_eip" "eip_nat" {
 
   tags = {
     Name = "eip1 - ${var.environment-name} - ${var.custom-name}"
+    Environment = var.environment-name
   }
 }
 
@@ -17,5 +18,6 @@ resource "aws_nat_gateway" "nat_1" {
   tags = {
     "Name" = "nat1 - ${var.environment-name}"
      Owner = var.custom-name
+     Environment = var.environment-name
   }
 }

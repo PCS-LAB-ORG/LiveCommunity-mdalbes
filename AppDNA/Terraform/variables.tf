@@ -10,7 +10,7 @@ variable "custom-name" {
 }
 
 variable "environment-name" {
-  default     = "appdna"
+  default     = "3tiersapp"
   description = "your own environment"
   type        = string
 }

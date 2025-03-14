@@ -32,5 +32,6 @@ resource "aws_security_group" "alb-security-group" {
   tags = {
     Name = "ALB Security group - ${var.environment-name}"
     Owner = var.custom-name
+    Environment = var.environment-name
   }
 }

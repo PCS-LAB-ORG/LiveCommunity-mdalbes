@@ -11,6 +11,7 @@ resource "aws_subnet" "public-web-subnet-1" {
   tags = {
     Name = "Public Subnet 1-${var.environment-name}"
     Owner = var.custom-name
+    Environment = var.environment-name
   }
 }
 

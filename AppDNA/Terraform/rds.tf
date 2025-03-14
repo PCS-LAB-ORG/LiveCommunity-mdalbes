@@ -9,6 +9,7 @@ resource "aws_db_subnet_group" "database-subnet-group" {
   tags = {
     Name = "Database Subnets - ${var.environment-name}"
     Owner = var.custom-name
+    Environment = var.environment-name
   }
 }
 #################################

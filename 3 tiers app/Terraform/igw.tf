@@ -8,5 +8,6 @@ resource "aws_internet_gateway" "igw" {
   tags = {
     Name = "IGW-${var.environment-name}"
     Owner = var.custom-name
+    Environment = var.environment-name
   }
 }

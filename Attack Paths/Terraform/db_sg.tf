@@ -25,5 +25,6 @@ resource "aws_security_group" "database-security-group" {
   tags = {
     Name = "Database Security group - ${var.environment-name}"
     Owner = var.custom-name
+    Environment = var.environment-name
   }
 }
