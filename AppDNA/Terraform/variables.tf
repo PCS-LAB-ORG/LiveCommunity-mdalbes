@@ -10,7 +10,7 @@ variable "custom-name" {
 }
 
 variable "environment-name" {
-  default     = "AppDNA-mdalbes"
+  default     = "appdna-mdalbes"
   description = "your own environment"
   type        = string
 }

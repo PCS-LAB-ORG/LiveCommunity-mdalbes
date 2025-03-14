@@ -2,7 +2,7 @@
 ####  database subnet group #####
 #################################
 resource "aws_db_subnet_group" "database-subnet-group" {
-  name        = "database subnets - ${var.environment-name}"
+  name        = "database subnets  ${var.environment-name}"
   subnet_ids  = [aws_subnet.private-db-subnet-1.id, aws_subnet.private-db-subnet-2.id]
   description = "Subnet group for database instance"
 
