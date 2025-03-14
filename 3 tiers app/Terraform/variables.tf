@@ -1,3 +1,20 @@
+
+####################
+## Customisation  ##
+####################
+
+variable "custom-name" {
+  default     = "mdalbes"
+  description = "your own name"
+  type        = string
+}
+
+variable "environment-name" {
+  default     = "3tiersapp"
+  description = "your own environment"
+  type        = string
+}
+
 ####################
 ## VPC CIDR Block ##
 ####################

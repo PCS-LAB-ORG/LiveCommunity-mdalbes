@@ -3,7 +3,7 @@
 ###################################
 
 resource "aws_security_group" "database-security-group" {
-  name        = "Database server Security Group"
+  name        = "Database server Security Group - ${var.environment-name}"
   description = "Enable MYSQL access on port 3306"
   vpc_id      = aws_vpc.vpc_01.id
 
@@ -23,7 +23,7 @@ resource "aws_security_group" "database-security-group" {
   }
 
   tags = {
-    Name = "Database Security group"
-    Owner = "mdalbes"
+    Name = "Database Security group - ${var.environment-name}"
+    Owner = var.custom-name
   }
 }

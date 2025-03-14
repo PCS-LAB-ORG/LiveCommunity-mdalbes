@@ -9,8 +9,8 @@ resource "aws_subnet" "public-web-subnet-1" {
   map_public_ip_on_launch = true
 
   tags = {
-    Name = "Public Subnet 1"
-    Owner = "mdalbes"
+    Name = "Public Subnet 1-${var.environment-name}"
+    Owner = var.custom-name
   }
 }
 
@@ -25,8 +25,8 @@ resource "aws_subnet" "public-web-subnet-2" {
   map_public_ip_on_launch = true
 
   tags = {
-    Name = "Public Subnet 2"
-    Owner = "mdalbes"
+    Name = "Public Subnet 2-${var.environment-name}"
+    Owner = var.custom-name
   }
 }
 
@@ -41,8 +41,8 @@ resource "aws_subnet" "private-app-subnet-1" {
   map_public_ip_on_launch = false
 
   tags = {
-    Name = "Private Subnet 1 | App Tier"
-    Owner = "mdalbes"
+    Name = "Private Subnet 1 | App Tier -${var.environment-name}"
+    Owner = var.custom-name
   }
 }
 
@@ -57,8 +57,8 @@ resource "aws_subnet" "private-app-subnet-2" {
   map_public_ip_on_launch = false
 
   tags = {
-    Name = "Private Subnet 2 | App Tier"
-    Owner = "mdalbes"
+    Name = "Private Subnet 2 | App Tier - ${var.environment-name}"
+    Owner = var.custom-name
   }
 }
 
@@ -73,8 +73,8 @@ resource "aws_subnet" "private-db-subnet-1" {
   map_public_ip_on_launch = false
 
   tags = {
-    Name = "Private Subnet 1 | Db Tier"
-    Owner = "mdalbes"
+    Name = "Private Subnet 1 | Db Tier - ${var.environment-name}"
+    Owner = var.custom-name
   }
 }
 
@@ -89,7 +89,7 @@ resource "aws_subnet" "private-db-subnet-2" {
   map_public_ip_on_launch = false
 
   tags = {
-    Name = "Private Subnet 2 | Db Tier"
-    Owner = "mdalbes"
+    Name = "Private Subnet 2 | Db Tier - ${var.environment-name}"
+    Owner = var.custom-name
   }
 }

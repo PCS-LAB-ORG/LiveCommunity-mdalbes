@@ -2,7 +2,7 @@
 ## SG Presentation Tier         ###
 ###################################
 resource "aws_security_group" "webserver-security-group" {
-  name        = "Web server Security Group"
+  name        = "Web server Security Group-${var.environment-name}"
   description = "Enable http/https access on port 80/443 via ALB and ssh via ssh sg"
   vpc_id      = aws_vpc.vpc_01.id
 
@@ -37,7 +37,7 @@ resource "aws_security_group" "webserver-security-group" {
   }
 
   tags = {
-    Name = "Web server Security group"
-    Owner = "mdalbes"
+    Name = "Web server Security group-${var.environment-name}"
+    Owner = var.custom-name
   }
 }

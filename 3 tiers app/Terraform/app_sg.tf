@@ -23,7 +23,7 @@ resource "aws_security_group" "ssh-security-group" {
   }
 
   tags = {
-    Name = "ssh Security group"
-    Owner = "mdalbes"
+    Name = "ssh Security group - ${var.environment-name}"
+    Owner = var.custom-name
   }
 }

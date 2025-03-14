@@ -2,7 +2,7 @@
 ## SG Application Load Balancer ###
 ###################################
 resource "aws_security_group" "alb-security-group" {
-  name        = "ALB Security Group"
+  name        = "ALB Security Group - ${var.environment-name}"
   description = "Enable http/https access on port 80/443"
   vpc_id      = aws_vpc.vpc_01.id
 
@@ -30,7 +30,7 @@ resource "aws_security_group" "alb-security-group" {
   }
 
   tags = {
-    Name = "ALB Security group"
-    Owner = "mdalbes"
+    Name = "ALB Security group - ${var.environment-name}"
+    Owner = var.custom-name
   }
 }

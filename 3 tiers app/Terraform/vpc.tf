@@ -9,13 +9,13 @@ resource "aws_vpc" "vpc_01" {
   enable_dns_hostnames = true
 
   tags = {
-    Name = "central-network-mdalbes"
-    Owner = "mdalbes"
+    Name = "${var.environment-name}-${var.custom-name}"
+    Owner = var.custom-name
   }
 }
 
 resource "aws_cloudwatch_log_group" "flowlog_loggroup" {
-  name = "loggroup-mdalbes"
+  name = "loggroup-${var.custom-name}-${var.environment-name}"
 }
 
 resource "aws_flow_log" "prisma_flow_log" {
@@ -26,10 +26,10 @@ resource "aws_flow_log" "prisma_flow_log" {
 }
 
 resource "aws_s3_bucket" "flowlog-s3" {
-  bucket = "mdalbes-flowlogs"
+  bucket = "${var.custom-name}-flowlogs-${var.environment-name}"
 
   tags = {
-    Name        = "mdalbes-flowlogs"
+    Name        = "${var.custom-name}-flowlogs"
   }
 }
 
