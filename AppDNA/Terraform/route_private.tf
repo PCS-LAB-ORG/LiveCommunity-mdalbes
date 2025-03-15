@@ -11,9 +11,10 @@ resource "aws_route_table" "private-route-table" {
   }
 
   tags = {
-    Name = "Private Route Table - ${var.environment-name}"
-    Owner = var.custom-name
-    Environment = var.environment-name
+    Name           = "Private Route Table - ${var.environment-name}"
+    Owner          = var.custom-name
+    Environment    = var.environment-name
+    ApplicationTag = ""
   }
 }
 
