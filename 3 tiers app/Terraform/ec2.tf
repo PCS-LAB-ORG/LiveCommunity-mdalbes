@@ -55,7 +55,7 @@ resource "aws_instance" "PublicWebTemplate" {
   tags = {
     Name  = "web-instance-${var.custom-name}-${var.environment-name}"
     Owner = var.custom-name
-    Environment = var.environment-name
+    Environment = "3tiersapp"
   }
 }
 
@@ -92,7 +92,7 @@ resource "aws_instance" "private-app-template" {
   tags = {
     Name  = "app-instance-${var.custom-name} - ${var.environment-name}"
     Owner = var.custom-name
-    Environment = var.environment-name
+    Environment = "3tiersapp"
   }
 }
 
